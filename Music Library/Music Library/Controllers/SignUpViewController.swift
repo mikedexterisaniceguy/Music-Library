@@ -128,13 +128,19 @@ class SignUpViewController: UIViewController {
     private var elementsStackView = UIStackView()
     private let datePicker = UIDatePicker()
     
+    let nameValidType: String.ValidTypes = .name
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setConstraints()
         setupDelegate()
-        setupDataPicker()
+        registerKeyboardNotification()
+    }
+    
+    deinit {
+        removeKeyboardNotification()
     }
     
     private func setupViews() {
@@ -188,13 +194,54 @@ class SignUpViewController: UIViewController {
         signUpViewController.modalPresentationStyle = .currentContext
         self.present(signUpViewController, animated: true)
     }
+    
+    private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, message: String, wrongMessage: String, string: String, range: NSRange) {
+        
+        let text = (textField.text ?? "") + string
+        let result: String
+        
+        if range.length == 1 {
+            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+            result = String(text[text.startIndex..<end])
+        } else {
+            result = text
+        }
+        
+        textField.text = result
+        
+        if result.isValid(validType: validType) {
+            label.text = message
+            label.textColor = .green
+        } else {
+            label.text = wrongMessage
+            label.textColor = .red
+        }
+    }
 }
-
 
 //MARK: - UITextFieldDelegate
 extension SignUpViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        switch textField {
+        case firstNameTextField: setTextField(textField: firstNameTextField,
+                                              label: firstNameValidLabel,
+                                              validType: nameValidType,
+                                              message: "Name is valid",
+                                              wrongMessage: "Expected only A-z characters, min 1 character",
+                                              string: string,
+                                              range: range)
+        case secondNameTextField: setTextField(textField: secondNameTextField,
+                                               label: secondNameValidLabel,
+                                               validType: nameValidType,
+                                               message: "Name is valid",
+                                               wrongMessage: "Non valid name. Expected only A-z characters, min 1 character",
+                                               string: string,
+                                               range: range)
+        default: break
+        }
+        
         
         return false
     }
@@ -206,6 +253,40 @@ extension SignUpViewController: UITextFieldDelegate {
         passwordTextField.resignFirstResponder()
         return true
     }
+}
+
+//MARK: Keyboard showing and hiding
+
+extension SignUpViewController {
+    
+    private func registerKeyboardNotification() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    private func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardHeigth = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHeigth.height / 2)
+    }
+    
+    @objc private func keyboardWillHide() {
+        scrollView.contentOffset = CGPoint.zero
+    }
+    
 }
 
 //MARK: - SetConstraints

@@ -15,6 +15,7 @@
 		9DC362AE2908106E00C24A5B /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362AD2908106E00C24A5B /* UIViewController + Extension.swift */; };
 		9DC362B0290810CB00C24A5B /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362AF290810CB00C24A5B /* AlbumTableViewCell.swift */; };
 		9DC362B2290810EF00C24A5B /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362B1290810EF00C24A5B /* SongsCollectionViewCell.swift */; };
+		9DC362B429082D4E00C24A5B /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362B329082D4E00C24A5B /* String + extension.swift */; };
 		9DEE37BD290193A2002B26B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE37BC290193A2002B26B7 /* AppDelegate.swift */; };
 		9DEE37BF290193A2002B26B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE37BE290193A2002B26B7 /* SceneDelegate.swift */; };
 		9DEE37C1290193A2002B26B7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE37C0290193A2002B26B7 /* AuthViewController.swift */; };
@@ -51,6 +52,7 @@
 		9DC362AD2908106E00C24A5B /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		9DC362AF290810CB00C24A5B /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		9DC362B1290810EF00C24A5B /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
+		9DC362B329082D4E00C24A5B /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
 		9DEE37B9290193A2002B26B7 /* Music Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DEE37BC290193A2002B26B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DEE37BE290193A2002B26B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				9DC362A8290295CE00C24A5B /* UIKit */,
+				9DC362B329082D4E00C24A5B /* String + extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				9DEE37C1290193A2002B26B7 /* AuthViewController.swift in Sources */,
 				9DC362AE2908106E00C24A5B /* UIViewController + Extension.swift in Sources */,
+				9DC362B429082D4E00C24A5B /* String + extension.swift in Sources */,
 				9DC362A52902878A00C24A5B /* UserInfoViewController.swift in Sources */,
 				9DC362A32902877B00C24A5B /* DetailAlbumViewController.swift in Sources */,
 				9DEE37BD290193A2002B26B7 /* AppDelegate.swift in Sources */,
