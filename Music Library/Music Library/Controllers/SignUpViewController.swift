@@ -70,6 +70,7 @@ class SignUpViewController: UIViewController {
     private let phoneNumberTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
+        textField.text = "+7"
         textField.placeholder = "Phone"
         textField.keyboardType = .numberPad
         return textField
@@ -129,6 +130,9 @@ class SignUpViewController: UIViewController {
     private let datePicker = UIDatePicker()
     
     let nameValidType: String.ValidTypes = .name
+    let emailValidType: String.ValidTypes = .email
+    let passwordValidType: String.ValidTypes = .password
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -217,6 +221,47 @@ class SignUpViewController: UIViewController {
             label.textColor = .red
         }
     }
+    
+    private func setPhoneMask(textField: UITextField, mask: String, string: String, range: NSRange) -> String {
+        
+        let text = textField.text ?? ""
+        var result = ""
+        
+        let phone = (text as NSString).replacingCharacters(in: range, with: string)
+        let number = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var index = number.startIndex
+        
+        for character in mask where index < number.endIndex {
+            if character == "X" {
+                result.append(number[index])
+                index = number.index(after: index)
+            } else {
+                result.append(character)
+            }
+        }
+        
+        if result.count == 18 {
+            phoneValidLabel.text = "Number is valid"
+            phoneValidLabel.textColor = .green
+        } else {
+            phoneValidLabel.text = "Invalid number"
+            phoneValidLabel.textColor = .red
+        }
+        
+        return result
+    }
+    
+    private func ageCount() -> Bool {
+        
+        let calendar = NSCalendar.current
+        let dateNow = Date()
+        let birthday = datePicker.date
+        
+        let age = calendar.dateComponents([.year], from: birthday, to: dateNow)
+        let ageYear = age.year
+        guard let ageUser = ageYear else { return false }
+        return (ageUser < 18 ? false : true)
+    }
 }
 
 //MARK: - UITextFieldDelegate
@@ -236,9 +281,27 @@ extension SignUpViewController: UITextFieldDelegate {
                                                label: secondNameValidLabel,
                                                validType: nameValidType,
                                                message: "Name is valid",
-                                               wrongMessage: "Non valid name. Expected only A-z characters, min 1 character",
+                                               wrongMessage: "Expected only A-z characters, min 1 character",
                                                string: string,
                                                range: range)
+        case emailTextField: setTextField(textField: emailTextField,
+                                               label: emailValidLabel,
+                                               validType: emailValidType,
+                                               message: "Email is valid",
+                                               wrongMessage: "Expected format: yourmail@mail.com",
+                                               string: string,
+                                               range: range)
+        case passwordTextField: setTextField(textField: passwordTextField,
+                                               label: passwordValidLabel,
+                                               validType: passwordValidType,
+                                               message: "Password is valid",
+                                               wrongMessage: "Expected format: a-z, A-Z, 0-9, _. Min 8 symbols",
+                                               string: string,
+                                               range: range)
+        case phoneNumberTextField: phoneNumberTextField.text = setPhoneMask(textField: phoneNumberTextField,
+                                                mask: "+X (XXX) XXX-XX-XX",
+                                                string: string,
+                                                range: range)
         default: break
         }
         
