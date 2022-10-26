@@ -58,12 +58,15 @@ class DetailAlbumViewController: UIViewController {
     
     private var stackView = UIStackView()
     
+    var album: Album?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
         setupViews()
         setConstraints()
         setDelegate()
+        setModel()
     }
     
     private func setupViews() {
@@ -85,6 +88,31 @@ class DetailAlbumViewController: UIViewController {
     private func setDelegate() {
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    private func setModel() {
+        
+        guard let album = album else {
+            return
+        }
+
+        albumNameLabel.text = album.collectionName
+        artistNameLabel.text = album.artistName
+        trackCountLabel.text = "\(album.trackCount) tracks"
+        releaseDateLabel.text = setDateFormat(date: album.releaseDate)
+        
+    }
+    
+    private func setDateFormat(date: String) -> String {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy'-'MM'-'dd''HH':'mm':'ss':'ssZZZ"
+        
+        guard let backendDate = dateFormater.date(from: date) else { return ""}
+        
+        let formatDate = DateFormatter()
+        formatDate.dateFormat = "dd-MM-yyyy"
+        let date = formatDate.string(from: backendDate)
+        return date
     }
 }
 
