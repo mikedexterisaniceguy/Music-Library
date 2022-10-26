@@ -31,4 +31,23 @@ class NetworkDataFetch {
             }
         }
     }
+    
+    func fetchSongs(urlString: String, responce: @escaping (SongsModel?, Error?) -> Void) {
+        
+        NetworkRequest.shared.requestData(urlString: urlString) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let albums = try JSONDecoder().decode(SongsModel.self, from: data)
+                    responce(albums, nil)
+                } catch let jsonError {
+                    print("Error", jsonError) // jsonError - возвращается если у нас не бьются имена из джейсона и в модели куда парсятся данные
+                    
+                }
+            case .failure(let error):
+                print("Не удалось получить значение \(error.localizedDescription)")
+                responce(nil, error)
+            }
+        }
+    }
 }
