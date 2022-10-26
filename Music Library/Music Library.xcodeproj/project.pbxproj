@@ -16,6 +16,9 @@
 		9DC362B0290810CB00C24A5B /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362AF290810CB00C24A5B /* AlbumTableViewCell.swift */; };
 		9DC362B2290810EF00C24A5B /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362B1290810EF00C24A5B /* SongsCollectionViewCell.swift */; };
 		9DC362B429082D4E00C24A5B /* String + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362B329082D4E00C24A5B /* String + extension.swift */; };
+		9DC362B72908730300C24A5B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362B62908730300C24A5B /* UserDefaultManager.swift */; };
+		9DC362BA2908735F00C24A5B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362B92908735F00C24A5B /* UserModel.swift */; };
+		9DC362BC290924C000C24A5B /* AlertOK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC362BB290924C000C24A5B /* AlertOK.swift */; };
 		9DEE37BD290193A2002B26B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE37BC290193A2002B26B7 /* AppDelegate.swift */; };
 		9DEE37BF290193A2002B26B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE37BE290193A2002B26B7 /* SceneDelegate.swift */; };
 		9DEE37C1290193A2002B26B7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE37C0290193A2002B26B7 /* AuthViewController.swift */; };
@@ -53,6 +56,9 @@
 		9DC362AF290810CB00C24A5B /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		9DC362B1290810EF00C24A5B /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DC362B329082D4E00C24A5B /* String + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extension.swift"; sourceTree = "<group>"; };
+		9DC362B62908730300C24A5B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		9DC362B92908735F00C24A5B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		9DC362BB290924C000C24A5B /* AlertOK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOK.swift; sourceTree = "<group>"; };
 		9DEE37B9290193A2002B26B7 /* Music Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DEE37BC290193A2002B26B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DEE37BE290193A2002B26B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +147,23 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		9DC362B5290872D900C24A5B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9DC362B62908730300C24A5B /* UserDefaultManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9DC362B82908734700C24A5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DC362B92908735F00C24A5B /* UserModel.swift */,
+				9DC362BB290924C000C24A5B /* AlertOK.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9DEE37B0290193A2002B26B7 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +189,8 @@
 			children = (
 				9DC362A7290295BC00C24A5B /* Extensions */,
 				9DC3629D290286D800C24A5B /* Controllers */,
+				9DC362B82908734700C24A5B /* Model */,
+				9DC362B5290872D900C24A5B /* Services */,
 				9DC3629C2902845500C24A5B /* Delegates */,
 				9DEE37C5290193A3002B26B7 /* Assets.xcassets */,
 				9DEE37C7290193A3002B26B7 /* LaunchScreen.storyboard */,
@@ -328,8 +353,11 @@
 				9DC362A32902877B00C24A5B /* DetailAlbumViewController.swift in Sources */,
 				9DEE37BD290193A2002B26B7 /* AppDelegate.swift in Sources */,
 				9DC362B0290810CB00C24A5B /* AlbumTableViewCell.swift in Sources */,
+				9DC362BC290924C000C24A5B /* AlertOK.swift in Sources */,
 				9DC362B2290810EF00C24A5B /* SongsCollectionViewCell.swift in Sources */,
+				9DC362BA2908735F00C24A5B /* UserModel.swift in Sources */,
 				9DC3629F2902873B00C24A5B /* SignUpViewController.swift in Sources */,
+				9DC362B72908730300C24A5B /* UserDefaultManager.swift in Sources */,
 				9DEE37BF290193A2002B26B7 /* SceneDelegate.swift in Sources */,
 				9DC362A12902876700C24A5B /* AlbumsViewController.swift in Sources */,
 				9DC362AA2902960600C24A5B /* UIStackView + Extension.swift in Sources */,

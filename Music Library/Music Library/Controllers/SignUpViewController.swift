@@ -192,11 +192,36 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func signUpButtonTapped() {
-        //print("SignUpTap")
+        
+        let firstTextField = firstNameTextField.text ?? ""
+        let secondTextField = secondNameTextField.text ?? ""
+        let phoneTextField = phoneNumberTextField.text ?? ""
+        let emailTextField = emailTextField.text ?? ""
+        let passwordTextField = passwordTextField.text ?? ""
+        
+        
+        if firstTextField.isValid(validType: nameValidType)
+        && secondTextField.isValid(validType: nameValidType)
+        && emailTextField.isValid(validType: emailValidType)
+        && passwordTextField.isValid(validType: passwordValidType)
+        && phoneTextField.count == 18
+        && ageCount() == true {
+            DataBase.shared.saveUser(firstName: firstTextField,
+                                     secondName: secondTextField,
+                                     phone: phoneTextField,
+                                     email: emailTextField,
+                                     password: passwordTextField,
+                                     age: datePicker.date)
+            loginLabel.text = "Registration complete"
+        } else {
+            loginLabel.text = "Registration"
+            alertOk(title: "Error", message: "jbjnkn")
+        }
         
         let signUpViewController = AuthViewController()
         signUpViewController.modalPresentationStyle = .currentContext
         self.present(signUpViewController, animated: true)
+        
     }
     
     private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, message: String, wrongMessage: String, string: String, range: NSRange) {
