@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlbumsViewController: UIViewController {
+final class AlbumsViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()

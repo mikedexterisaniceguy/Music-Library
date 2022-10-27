@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+final class SignUpViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -70,7 +70,7 @@ class SignUpViewController: UIViewController {
     private let phoneNumberTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
-        textField.text = "+7"
+        textField.text = "+375"
         textField.placeholder = "Phone"
         textField.keyboardType = .numberPad
         return textField
@@ -204,7 +204,7 @@ class SignUpViewController: UIViewController {
         && secondTextField.isValid(validType: nameValidType)
         && emailTextField.isValid(validType: emailValidType)
         && passwordTextField.isValid(validType: passwordValidType)
-        && phoneTextField.count == 18
+        && phoneTextField.count == 19
         && ageCount() == true {
             DataBase.shared.saveUser(firstName: firstTextField,
                                      secondName: secondTextField,
@@ -265,7 +265,7 @@ class SignUpViewController: UIViewController {
             }
         }
         
-        if result.count == 18 {
+        if result.count == 19 {
             phoneValidLabel.text = "Number is valid"
             phoneValidLabel.textColor = .green
         } else {
@@ -324,7 +324,7 @@ extension SignUpViewController: UITextFieldDelegate {
                                                string: string,
                                                range: range)
         case phoneNumberTextField: phoneNumberTextField.text = setPhoneMask(textField: phoneNumberTextField,
-                                                mask: "+X (XXX) XXX-XX-XX",
+                                                mask: "+XXX (XX) XXX-XX-XX",
                                                 string: string,
                                                 range: range)
         default: break

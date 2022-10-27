@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserInfoViewController: UIViewController {
+final class UserInfoViewController: UIViewController {
 
     private let firstNameLabel: UILabel = {
         let label = UILabel()

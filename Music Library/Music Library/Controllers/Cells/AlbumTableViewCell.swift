@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlbumsTableViewCell: UITableViewCell {
+final class AlbumsTableViewCell: UITableViewCell {
     
     private let albumLogo: UIImageView = {
        let imageView = UIImageView()

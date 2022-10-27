@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SongsCollectionViewCell: UICollectionViewCell {
+final class SongsCollectionViewCell: UICollectionViewCell {
     
     let nameSongLabel: UILabel = {
        let label = UILabel()

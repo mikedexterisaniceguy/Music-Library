@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataBase {
+final class DataBase {
     
     static let shared = DataBase()
     

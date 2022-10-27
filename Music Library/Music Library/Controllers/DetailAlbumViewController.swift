@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailAlbumViewController: UIViewController {
+final class DetailAlbumViewController: UIViewController {
     
     private let albumLogo: UIImageView = {
         let imageView = UIImageView()

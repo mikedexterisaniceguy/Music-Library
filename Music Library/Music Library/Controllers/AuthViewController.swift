@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+final class AuthViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scrollview = UIScrollView()
@@ -68,9 +68,6 @@ class AuthViewController: UIViewController {
     private var textFieldsStackView = UIStackView()
     private var buttonsStackView = UIStackView()
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
