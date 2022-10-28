@@ -54,7 +54,7 @@ API: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web
 
 - Архитектура -  MVC
 - Фреймворки - Foundation, UIKit
-- Autolayout - Верстка кодом с использованием NSLayoutConstraints
+- Autolayout - Верстка кодом с использованием NSLayoutAnchors
 - Сеть - Асинхронная загрузка, парсинг JSON через Decodable
 - Обработка ошибок - Через Error, Result
 - Хранение данных - User Defaults
