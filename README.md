@@ -57,6 +57,7 @@ API: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web
 - Autolayout - Верстка кодом с использованием NSLayoutConstraints
 - Сеть - Асинхронная загрузка, парсинг JSON через Decodable
 - Обработка ошибок - Через Error, Result
+- Хранение данных - User Defaults
 
 <h1> Реализация наглядно </h1>
 
@@ -72,20 +73,28 @@ API: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web
   <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поле%20регистрации%20пользователя.png?raw=true" width="200" height="400"/>
 </div>
 
-Поле авторизации. Лейбл меняется, если вводятся данные, которых нет в User Defaults.
+После регистрации пользователь попадает на поле авторизации. Лейбл меняется, если вводятся данные, которых нет в User Defaults.
+
+Переход на вью поиска альбомов после нажатия на кнопку сайн ап. Сверху серч вью и кнопка к переходу на вью данных о пользователе.
 
 <div id="header" align="center">
-  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/После%20регистрации%20пользователь%20может%20авторизоваться.%20Если%20что-то%20не%20бьется%20с%20данными%20в%20User%20Defaults%2C%20лейбл%20логина%20меняется.png?raw=true" width="200" height="150"/>
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Серч%20вью%2C%20кнопка%20информации%20о%20пользователе.png?raw=true" width="200" height="400"/>
 </div>
 
-<div id="header" align="center">
-  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поле%20регистрации%20пользователя.png?raw=true" width="200" height="400"/>
-</div>
+Данные пользователя.
 
 <div id="header" align="center">
-  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поле%20регистрации%20пользователя.png?raw=true" width="200" height="400"/>
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Нажатие%20кнопки%20юзер%20инфо.png?raw=true" width="200" height="400"/>
 </div>
 
+Поиск по названию альбома. Можно на англ и на ру вводить.
+
 <div id="header" align="center">
-  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поле%20регистрации%20пользователя.png?raw=true" width="200" height="400"/>
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поиск%20по%20альбому.png?raw=true" width="200" height="400"/>
+</div>
+
+Подробное инфо по альботу. Дата релиза, количество треков.
+
+<div id="header" align="center">
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Подробное%20инфо%20по%20альбому%20и%20трекам.png?raw=true" width="200" height="400"/>
 </div>
