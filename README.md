@@ -59,3 +59,33 @@ API: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web
 - Обработка ошибок - Через Error, Result
 
 <h1> Реализация наглядно </h1>
+
+Стартовый экран.
+
+<div id="header" align="center">
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Вью%20логина.png?raw=true" width="200" height="400"/>
+</div>
+
+Переход на экран создания пользователя. Заполняются поля, если вводятся некорректные символы, меняется лейбл под текст филдом. 
+
+<div id="header" align="center">
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поле%20регистрации%20пользователя.png?raw=true" width="200" height="400"/>
+</div>
+
+Поле авторизации. Лейбл меняется, если вводятся данные, которых нет в User Defaults.
+
+<div id="header" align="center">
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/После%20регистрации%20пользователь%20может%20авторизоваться.%20Если%20что-то%20не%20бьется%20с%20данными%20в%20User%20Defaults%2C%20лейбл%20логина%20меняется.png?raw=true" width="200" height="150"/>
+</div>
+
+<div id="header" align="center">
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поле%20регистрации%20пользователя.png?raw=true" width="200" height="400"/>
+</div>
+
+<div id="header" align="center">
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поле%20регистрации%20пользователя.png?raw=true" width="200" height="400"/>
+</div>
+
+<div id="header" align="center">
+  <img src="https://github.com/mikedexterisaniceguy/Music-Library/blob/main/Realisation/Поле%20регистрации%20пользователя.png?raw=true" width="200" height="400"/>
+</div>
