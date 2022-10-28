@@ -52,10 +52,10 @@ API: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web
 
 <h1> Используемый стек </h1>
 
-Архитектура -  MVC
-Фреймворки - Foundation, UIKit
-Autolayout - Верстка кодом с использованием NSLayoutConstraints
-Сеть - Асинхронная загрузка, парсинг JSON через Decodable
-Обработка ошибок - Через Error, Result
+- Архитектура -  MVC
+- Фреймворки - Foundation, UIKit
+- Autolayout - Верстка кодом с использованием NSLayoutConstraints
+- Сеть - Асинхронная загрузка, парсинг JSON через Decodable
+- Обработка ошибок - Через Error, Result
 
-<h1> Реализация в картинках </h1>
+<h1> Реализация наглядно </h1>
